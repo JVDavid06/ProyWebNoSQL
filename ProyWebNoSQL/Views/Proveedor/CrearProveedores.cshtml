@@ -1,0 +1,41 @@
+﻿@model ProyWebNoSQL.Entities.Proveedor
+
+@{
+    ViewData["Title"] = "Crear proveedores";
+}
+
+<h1>Crear proveedores</h1>
+
+<h4>Proveedor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @using(Html.BeginForm("CrearProveedores","Proveedor",FormMethod.Post))
+        {
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NombreProveedor" class="control-label"></label>
+                @Html.TextBoxFor(m => m.NombreProveedor)
+                <span asp-validation-for="NombreProveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Direccion" class="control-label"></label>
+                @Html.TextBoxFor(m => m.Direccion, new {@class="form-control"})
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+                </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label"></label>
+                @Html.TextBoxFor(m => m.Telefono, new {@class="form-control"})
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                @Html.TextBoxFor(m => m.Email, new {@class="form-control"})
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <Br></Br>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+                 <a href="@Url.Action("VerProveedores", "Proveedor")" class="btn btn-warning">Regresar</a>
+            </div>
+        }
