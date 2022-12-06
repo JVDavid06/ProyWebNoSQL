@@ -49,9 +49,13 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-               @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+               <div class="form-group">
+               <a href="@Url.Action("Editar", "Proveedor", new {  id=item.id})" class="btn btn-primary">Editar Proveedor </a>
+               </div>
+               <br>
+               <div class="form-group">
+               <a href="@Url.Action("EliminarProveedor", "Proveedor", new {  id=item.id})" class="btn btn-warning">Eliminar Proveedor </a>
+               </div>
             </td>
         </tr>
 }

@@ -28,5 +28,27 @@ namespace ProyWebNoSQL.Controllers
             return RedirectToAction("VerProveedores","Proveedor");
         }
 
+        [HttpGet]
+        public ActionResult Editar(string id)
+        {
+            Proveedor proveedor = new Proveedor();
+            proveedor.id = id;
+            return View(proveedor);
+        }
+
+        [HttpPost]
+        public IActionResult EditarProveedor(Proveedor proveedor)
+        {
+            modelo.EditarProveedores(proveedor);
+            return RedirectToAction("VerProveedores", "Proveedor");
+        }
+        
+        [HttpGet]
+        public ActionResult EliminarProveedor(string id)
+        {
+            modelo.EliminarProveedores(id);
+            return RedirectToAction("VerProveedores", "Proveedor");
+        }
+
     }
 }

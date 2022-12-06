@@ -24,7 +24,30 @@ namespace ProyWebNoSQL.Models
 
                 JsonContent contenido = JsonContent.Create(proveedor);
                 HttpResponseMessage respuesta = client.PostAsync(url, contenido).GetAwaiter().GetResult();
-                //return "OK";
+               
+            }
+        }
+        public void EditarProveedores(Proveedor proveedor)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                string url = "https://localhost:44368/api/Proyecto/EditarProveedor"; //este lo hice sin mandar el id por el url porque hice un cambio en el API
+
+                JsonContent contenido = JsonContent.Create(proveedor);
+                HttpResponseMessage respuesta = client.PutAsync(url, contenido).GetAwaiter().GetResult();
+                
+            }
+        }
+
+        public void EliminarProveedores(string id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                string url = "https://localhost:44368/api/Proyecto/EliminarProveedor?id=" + id;
+
+               // JsonContent contenido = JsonContent.Create(id);
+                HttpResponseMessage respuesta = client.DeleteAsync(url).GetAwaiter().GetResult();
+
             }
         }
 
