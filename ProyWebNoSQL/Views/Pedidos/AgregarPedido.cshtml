@@ -1,0 +1,45 @@
+﻿@model ProyWebNoSQL.Entities.Pedidos
+
+@{
+    ViewData["Title"] = "Agregar Pedido";
+}
+
+<h1>Agregar Pedido</h1>
+
+<h4>Pedido</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @using(Html.BeginForm("AgregarPedido","Pedido",FormMethod.Post))
+        {
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="FormaDePago" class="control-label">Forma de pago</label>
+            @Html.TextBoxFor(m => m.FormaDePago)
+            <span asp-validation-for=" FormaDePago" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="IdUsuario" class="control-label">ID Usuario</label>
+            @Html.TextBoxFor(m => m.IdUsuario, new {@class="form-control"})
+            <span asp-validation-for="IdUsuario" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="IdProducto" class="control-label">ID Producto</label>
+            @Html.TextBoxFor(m => m.IdProducto, new {@class="form-control"})
+            <span asp-validation-for="IdProducto" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Cantidad" class="control-label">Cantidad</label>
+            @Html.TextBoxFor(m => m.Cantidad, new {@class="form-control"})
+            <span asp-validation-for="Cantidad" class="text-danger"></span>
+        </div><div class="form-group">
+            <label asp-for="Total" class="control-label">Total</label>
+            @Html.TextBoxFor(m => m.Total, new {@class="form-control"})
+            <span asp-validation-for="Total" class="text-danger"></span>
+        </div>
+        <Br></Br>
+        <div class="form-group">
+            <input type="submit" value="Agregar" class="btn btn-primary"/>
+            <a href="@Url.Action("VerPedidos", "Pedidos" )" class="btn btn-warning">Regresar</a>
+        </div>
+        }
