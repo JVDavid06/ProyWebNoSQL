@@ -36,7 +36,7 @@ namespace ProyWebNoSQL.Controllers
             return View();
         }
 
-        [HttpPut]
+        [HttpPost]
         public IActionResult EditarPedido(Pedidos pedidos)
         {
             model.EditarPedido(pedidos.id,pedidos);
@@ -51,7 +51,7 @@ namespace ProyWebNoSQL.Controllers
             return View();
         }
 
-        [HttpDelete]
+        [HttpPost]
         public IActionResult EliminarPedido(string idPedido)
         {
             model.EliminarPedido(idPedido);
