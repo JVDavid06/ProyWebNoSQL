@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ProyWebNoSQL.Entities.Ordenes>
+
+@{
+    ViewData["Title"] = "Ver Ordenes";
+}
+
+<h1>Ver Ordenes</h1>
+
+<div class="form-group">
+    <a href="@Url.Action("AgregarOrdenes", "Ordenes")" class="btn btn-primary">Crear Ordenes</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayName("Fecha del pedido")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaEntrega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPedido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DireccionEnvio)
+            </th>
+              <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaPedidp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaEntrega)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdPedido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DireccionEnvio)
+                </td>
+                  <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    <div class="form-group">
+                        <a href="@Url.Action("EditarOrdenes", "Ordenes", new {  id=item.id})" class="btn btn-primary">Editar Ordenes </a>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <a href="@Url.Action("EliminarOrdenes", "Ordenes", new {  id=item.id})" class="btn btn-warning">Eliminar Ordenes </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

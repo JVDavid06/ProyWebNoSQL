@@ -1,0 +1,58 @@
+﻿@model ProyWebNoSQL.Entities.Ordenes
+
+@{
+    ViewData["Title"] = "ver Orden";
+}
+<h3>Desea elminar la siguiente Orden</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaPedido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaPedido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaEntrega)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaEntrega)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdPedido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DireccionEnvio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DireccionEnvio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+             @Html.ActionLink("Regresar", "VerOrdenes")
+        </div>
+    }
+</div>

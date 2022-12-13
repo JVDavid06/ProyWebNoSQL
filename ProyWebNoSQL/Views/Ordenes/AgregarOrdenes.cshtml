@@ -1,0 +1,45 @@
+﻿@model ProyWebNoSQL.Entities.Ordenes
+
+@{
+    ViewData["Title"] = "Agregar Ordenes";
+}
+
+<h1>Agregar Orden</h1>
+
+<h4>Orden</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("AgregarOrdenes", "Ordenes", FormMethod.Post))
+        {
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+                <label asp-for="FechaPedido" class="control-label">Fecha de Pedido</label>
+                @Html.TextBoxFor(m => m.FechaPedidp, new {@class="form-control"})
+                <span asp-validation-for=" FechaPedido" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                <label asp-for="FechaEntrega" class="control-label">Fecha de Entrega</label>
+                @Html.TextBoxFor(m => m.FechaEntrega, new {@class="form-control"})
+                <span asp-validation-for="FechaEntrega" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                <label asp-for="IdPedido" class="control-label">Id de Pedido</label>
+                @Html.TextBoxFor(m => m.IdPedido, new {@class="form-control"})
+                <span asp-validation-for="IdPedido" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                <label asp-for="DireccionEnvio" class="control-label">Direccion de Envio</label>
+                @Html.TextBoxFor(m => m.DireccionEnvio, new {@class="form-control"})
+                <span asp-validation-for="DireccionEnvio" class="text-danger"></span>
+        </div><div class="form-group">
+                <label asp-for="Estado" class="control-label">Estado</label>
+                @Html.TextBoxFor(m => m.Estado, new {@class="form-control"})
+            <span asp-validation-for="Estado" class="text-danger"></span>
+        </div>
+        <Br></Br>
+        <div class="form-group">
+            <input type="submit" value="Agregar" class="btn btn-primary"/>
+            <a href="@Url.Action("VerOrdenes", "Ordenes" )" class="btn btn-warning">Regresar</a>
+        </div>
+        }

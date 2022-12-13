@@ -1,0 +1,59 @@
+﻿@model ProyWebNoSQL.Entities.Ordenes
+
+@{
+    ViewData["Title"] = "Ver Orden";
+}
+
+<h4>Orden</h4>
+<hr/>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaPedido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaPedido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaEntrega)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaEntrega)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdPedido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DireccionEnvio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DireccionEnvio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "EditarOrden", new { idOrdenes = Model.id}) |
+    @Html.ActionLink("Regresar", "VerOrdenes")
+</p>
+
+
+
+
